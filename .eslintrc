@@ -6,7 +6,6 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:prettier/recommended"
@@ -17,7 +16,7 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react", "@typescript-eslint",
+    "@typescript-eslint",
     "prettier", "import", "simple-import-sort"
   ],
   "rules": {
@@ -37,6 +36,25 @@
     ],
     "@typescript-eslint/no-use-before-define": "off",
     "import/order": "off",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Side effect imports.
+          ["^\\u0000"],
+          // Packages.
+          ["^react", "@reduxjs/toolkit", "styled-components", "^@material-ui", "^@?\\w"],
+          // Internal packages.
+          ["^(components|pages|store|styles)(/.*)"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.s?css$"]
+        ]
+      }
+    ],
     "sort-imports": "off"
   },
   "settings": {

@@ -4,6 +4,10 @@
   "description": "暇な時に遊ぶ用にゲームを作ってみよう、というプロジェクト",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/.bin/eslint './{frontend,backend}/src/**/*.{js,ts,jsx,tsx}' --cache",
+    "eslint:fix": "npm run eslint -- --fix",
+    "prettier": "./node_modules/.bin/prettier './{frontend,backend}/src/**/*.{js,ts,jsx,tsx}' --write",
+    "lint": "npm run prettier && npm run eslint:fix",
     "prepare": "husky install"
   },
   "repository": {
