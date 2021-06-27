@@ -20,10 +20,10 @@ const cors = () => {
   });
 };
 
-const controller: Middleware = async(ctx) => {
+const controller: Middleware = async (ctx) => {
   console.log('receive');
   ctx.body = {
-    message: 'Hello World'
+    message: 'Hello World',
   };
 };
 
