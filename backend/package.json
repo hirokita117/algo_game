@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for algo game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "hirokita117",
+  "license": "ISC"
+}
