@@ -5,7 +5,7 @@ import Router from 'koa-router';
 const cors = () => {
   return koaCors({
     async origin(ctx): Promise<string> {
-      if (ctx.request.header.origin && ctx.request.header.origin) {
+      if (ctx.request.header.origin && ctx.request.header.origin === process.env.ALGO_FRONT_URL) {
         return ctx.request.header.origin;
       }
 
