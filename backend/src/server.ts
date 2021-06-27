@@ -1,6 +1,6 @@
+import koaCors from '@koa/cors';
 import Koa, { Middleware } from 'koa';
 import Router from 'koa-router';
-import koaCors from '@koa/cors';
 
 const PORT = 3001;
 const app = new Koa();
