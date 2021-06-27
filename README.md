@@ -5,6 +5,7 @@
 （dockerとかMakefileを用意した方が良いかも）  
 
 ```
+$ npm ci
 $ cd backend && npm ci
 $ cd frontend && npm ci
 
