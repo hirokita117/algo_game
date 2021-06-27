@@ -4,7 +4,8 @@
   "description": "backend for algo game",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "ts-node src/server.ts"
   },
   "author": "hirokita117",
   "license": "ISC",
