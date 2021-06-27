@@ -9,6 +9,7 @@
   "author": "hirokita117",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.13.1"
+    "koa": "^2.13.1",
+    "typescript": "^4.3.4"
   }
 }
