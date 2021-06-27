@@ -20,13 +20,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "eslint": "./node_modules/.bin/eslint './src/**/*.{js,ts,jsx,tsx}' --cache",
+    "eslint:fix": "npm run eslint -- --fix",
+    "prettier": "./node_modules/.bin/prettier './src/**/*.{js,ts,jsx,tsx}' --write",
+    "lint": "npm run prettier && npm run eslint:fix"
   },
   "browserslist": {
     "production": [

@@ -6,9 +6,9 @@ export const App: React.VFC = () => {
   const [msg, setMsg] = useState('');
   useEffect(() => {
     fetch('http://localhost:3001/')
-      .then(res => res.json())
-      .then(data => setMsg(data.message));
-  },[msg]);
+      .then((res) => res.json())
+      .then((data) => setMsg(data.message));
+  }, [msg]);
 
   return (
     <div className="App">
@@ -29,4 +29,4 @@ export const App: React.VFC = () => {
       </header>
     </div>
   );
-}
+};
