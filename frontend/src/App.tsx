@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+export const App: React.VFC = () => {
+  const [msg, setMsg] = useState('');
+  useEffect(() => {
+    fetch('http://localhost:3001/')
+      .then(res => res.json())
+      .then(data => setMsg(data.message));
+  },[msg]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +25,8 @@ function App() {
         >
           Learn React
         </a>
+        <p>{msg}</p>
       </header>
     </div>
   );
 }
-
-export default App;
