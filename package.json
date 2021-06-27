@@ -1,0 +1,43 @@
+{
+  "name": "algo_game",
+  "version": "1.0.0",
+  "description": "暇な時に遊ぶ用にゲームを作ってみよう、というプロジェクト",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hirokita117/algo_game.git"
+  },
+  "author": "hirokita117",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hirokita117/algo_game/issues"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "./node_modules/.bin/prettier --write",
+      "./node_modules/.bin/eslint --fix"
+    ]
+  }
+}
