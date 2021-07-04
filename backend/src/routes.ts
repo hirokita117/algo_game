@@ -1,6 +1,10 @@
 import koaCors from '@koa/cors';
-import Koa, { Middleware } from 'koa';
+import Koa from 'koa';
 import Router from 'koa-router';
+
+import { GetHelloWorldAction } from './application/api/GetHelloWorld/action';
+import { TYPES } from './types/DependencyTypes';
+import { myContainer } from './inversify.config';
 
 const cors = () => {
   return koaCors({
@@ -19,14 +23,9 @@ const cors = () => {
 export const RoutesLoader = async (app: Koa) => {
   const router = new Router();
 
-  const controller: Middleware = async (ctx) => {
-    console.log('receive');
-    ctx.body = {
-      message: 'Hello World',
-    };
-  };
+  const GetHelloWorldAction = myContainer.get<GetHelloWorldAction>(TYPES.GetHelloWorldAction);
 
-  router.get('/', controller);
+  router.get('/', (ctx: any) => GetHelloWorldAction.invoke(ctx));
 
   app.use(cors());
   app.use(router.routes());
