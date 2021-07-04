@@ -1,4 +1,4 @@
-import { AlgoGameApi } from '../config/app';
+import { AlgoGameApi } from '../../config/app';
 
 describe('InitialTest', () => {
   test('AlgoGameApi is not undefined', () => {

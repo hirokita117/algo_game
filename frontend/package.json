@@ -18,7 +18,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest src/__tests__/jest",
+    "jest": "jest",
+    "test:e2e": "testcafe chrome src/__tests__/e2e",
+    "testcafe": "testcafe chrome",
     "eject": "react-scripts eject"
   },
   "browserslist": {
