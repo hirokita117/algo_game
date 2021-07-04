@@ -3,7 +3,8 @@
     "browser": true,
     "node": true,
     "es2021": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "testcafe/globals": true
   },
   "extends": [
     "eslint:recommended",
@@ -16,7 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier", "import", "simple-import-sort", "jest"],
+  "plugins": ["@typescript-eslint", "prettier", "import", "simple-import-sort", "jest", "testcafe"],
   "rules": {
     "import/default": "off",
     "import/no-default-export": "error",
