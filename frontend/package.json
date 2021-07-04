@@ -18,8 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest src/__tests__/jest",
-    "jest": "jest",
+    "jest": "./node_modules/.bin/jest",
+    "test": "npm run jest src/__tests__/jest",
     "test:e2e": "testcafe chrome src/__tests__/e2e",
     "testcafe": "testcafe chrome",
     "eject": "react-scripts eject"
@@ -38,8 +38,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
-    "jest": "^27.0.6",
     "testcafe": "^1.14.2",
-    "ts-jest": "^27.0.3"
+    "ts-jest": "26.5.1"
   }
 }
