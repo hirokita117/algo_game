@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { AlgoGameApi } from './config/app';
 import logo from './logo.svg';
 
 import './App.css';
@@ -7,7 +8,7 @@ import './App.css';
 export const App: React.VFC = () => {
   const [msg, setMsg] = useState('');
   useEffect(() => {
-    fetch('http://localhost:3001/')
+    fetch(AlgoGameApi)
       .then((res) => res.json())
       .then((data) => setMsg(data.message));
   }, [msg]);
