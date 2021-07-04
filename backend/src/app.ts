@@ -1,9 +1,10 @@
 import Koa from 'koa';
 
+import { AlgoFrontPort } from './config/app';
 import { RoutesLoader } from './routes';
 
 export class App {
-  private PORT = 3001;
+  readonly PORT = AlgoFrontPort;
   public constructor(private app: Koa) {}
 
   public async init() {
