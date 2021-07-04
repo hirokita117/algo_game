@@ -18,10 +18,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "jest": "./node_modules/.bin/jest",
-    "test": "npm run jest src/__tests__/jest",
-    "test:e2e": "testcafe chrome src/__tests__/e2e",
+    "jest": "jest",
+    "test:jest": "jest src/__tests__/jest",
     "testcafe": "testcafe chrome",
+    "test:testcafe": "testcafe chrome src/__tests__/e2e",
     "eject": "react-scripts eject"
   },
   "browserslist": {
