@@ -61,7 +61,8 @@
     },
     "import/resolver": {
       "node": {
-        "extensions": [".tsx", ".ts", ".js", ".jsx"]
+        "extensions": [".tsx", ".ts", ".js", ".jsx"],
+        "paths": ["./frontend/**/*", "./backend/"]
       }
     }
   }
