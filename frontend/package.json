@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "jest": "^27.0.6",
+    "testcafe": "^1.14.2",
     "ts-jest": "^27.0.3"
   }
 }
