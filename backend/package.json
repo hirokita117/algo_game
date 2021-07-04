@@ -4,7 +4,7 @@
   "description": "backend for algo game",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "start": "ts-node-dev -r dotenv/config src/server.ts dotenv_config_path=.env"
   },
   "author": "hirokita117",
