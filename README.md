@@ -9,7 +9,7 @@
 ```
 $ npm ci
 $ cd backend && npm ci && cp .env.local .env
-$ cd frontend && npm ci
+$ cd frontend && npm ci && cp .env.local .env
 
 # それぞれのディレクトリで
 $ npm run start
