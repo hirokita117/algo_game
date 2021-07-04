@@ -3,8 +3,7 @@
     "browser": true,
     "node": true,
     "es2021": true,
-    "jest/globals": true,
-    "testcafe/globals": true
+    "jest/globals": true
   },
   "extends": [
     "eslint:recommended",
