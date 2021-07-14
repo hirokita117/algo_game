@@ -8,4 +8,8 @@ export class BlackCard implements CardInterface {
   public getCardNumber() {
     return this.cardNumber.getNumber();
   }
+
+  public isBigger(card: CardInterface) {
+    return this.getCardNumber() > card.getCardNumber();
+  }
 }
