@@ -1,9 +1,11 @@
+import { CardNumber } from '../../valueObjects/Card/CardNumber';
+
 import { CardInterface } from './CardInterface';
 
 export class BlackCard implements CardInterface {
-  public constructor(private cardNumber: number) {}
+  public constructor(private cardNumber: CardNumber) {}
 
   public getCardNumber() {
-    return this.cardNumber;
+    return this.cardNumber.getNumber();
   }
 }
