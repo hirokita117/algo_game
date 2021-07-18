@@ -10,7 +10,7 @@ export type HelloWorld = {
 @injectable()
 export class GetHelloWorldDomain {
   public async invoke(): Promise<HelloWorld> {
-    const redis = new Redis();
+    const redis = new Redis(); // ref: https://github.com/luin/ioredis#connect-to-redis
     redis.set('foo', 'bar');
     redis.get('foo', function (err, result) {
       if (err) {
