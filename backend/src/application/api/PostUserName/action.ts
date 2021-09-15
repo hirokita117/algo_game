@@ -17,6 +17,8 @@ export class PostUserNameAction implements Action {
   ) {}
 
   public async invoke(ctx: DefaultAppContext<any>): Promise<void> {
+    console.log(ctx.request.body);
+
     await this.responder.emit(ctx, await this.domain.invoke());
   }
 }

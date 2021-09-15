@@ -15,6 +15,27 @@ const Topics: React.VFC = () => {
 };
 
 const Home = (props: { msg: string }) => {
+  const [name, setName] = useState('');
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const handleClick = (e: React.FormEvent<HTMLInputElement>) => {
+    console.log(name);
+    fetch(`${AlgoGameApi}/user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name,
+      }),
+    })
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+    e.preventDefault();
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -33,6 +54,15 @@ const Home = (props: { msg: string }) => {
         </a>
         <p>{props.msg}</p>
       </header>
+      <div>
+        <form>
+          <label>
+            Your Name
+            <input type="text" onChange={handleChange} />
+          </label>
+          <input type="submit" value="Submit" onClick={handleClick} />
+        </form>
+      </div>
     </div>
   );
 };
