@@ -7,6 +7,7 @@ import { PostUserNameAction } from './application/api/PostUserName/action';
 import { PostUserNameDomain } from './application/api/PostUserName/domain';
 import { PostUserNameResponder } from './application/api/PostUserName/responder';
 import { UserService } from './application/services/User/UserService';
+import { UuidFactory } from './application/services/User/UuidFactory';
 import { UserRepositoryInterface } from './domain/repositories/UserRepositoryInterface';
 import { RedisConnection } from './infrastructure/DataSource/RedisConnection';
 import { UserRedisRepository } from './infrastructure/repositories/UserRedisRepository';
@@ -25,6 +26,7 @@ myContainer.bind<PostUserNameAction>(TYPES.PostUserNameAction).to(PostUserNameAc
 myContainer.bind<PostUserNameDomain>(TYPES.PostUserNameDomain).to(PostUserNameDomain);
 myContainer.bind<PostUserNameResponder>(TYPES.PostUserNameResponder).to(PostUserNameResponder);
 
+myContainer.bind<UuidFactory>(TYPES.UuidFactory).to(UuidFactory);
 myContainer.bind<UserService>(TYPES.UserService).to(UserService);
 
 export { myContainer };
