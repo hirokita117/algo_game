@@ -1,11 +1,16 @@
+export type UserInitialProps = {
+  id: string;
+  name: string;
+};
+
 export class User {
-  public constructor(private id: string, private name: string) {}
+  public constructor(private props: UserInitialProps) {}
 
   getId() {
-    return this.id;
+    return this.props.id;
   }
 
   getName() {
-    return this.name;
+    return this.props.name;
   }
 }

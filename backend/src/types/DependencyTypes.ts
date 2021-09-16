@@ -10,6 +10,10 @@ const TYPES = {
   PostUserNameDomain: Symbol.for('PostUserNameDomain'),
 
   UserRepository: Symbol.for('UserRepositoryInterface'),
+
+  UuidFactory: Symbol.for('UuidFactory'),
+
+  UserService: Symbol.for('UserService'),
 };
 
 export { TYPES };

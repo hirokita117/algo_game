@@ -1,5 +1,5 @@
-import { User } from '../entities/Player/User';
+import { User, UserInitialProps } from '../entities/Player/User';
 
 export interface UserRepositoryInterface {
-  save(user: User): Promise<void>;
+  save(props: UserInitialProps): Promise<User>;
 }

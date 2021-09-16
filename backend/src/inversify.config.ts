@@ -6,6 +6,7 @@ import { GetHelloWorldResponder } from './application/api/GetHelloWorld/responde
 import { PostUserNameAction } from './application/api/PostUserName/action';
 import { PostUserNameDomain } from './application/api/PostUserName/domain';
 import { PostUserNameResponder } from './application/api/PostUserName/responder';
+import { UserService } from './application/services/User/UserService';
 import { UserRepositoryInterface } from './domain/repositories/UserRepositoryInterface';
 import { RedisConnection } from './infrastructure/DataSource/RedisConnection';
 import { UserRedisRepository } from './infrastructure/repositories/UserRedisRepository';
@@ -23,5 +24,7 @@ myContainer.bind<GetHelloWorldAction>(TYPES.GetHelloWorldAction).to(GetHelloWorl
 myContainer.bind<PostUserNameAction>(TYPES.PostUserNameAction).to(PostUserNameAction);
 myContainer.bind<PostUserNameDomain>(TYPES.PostUserNameDomain).to(PostUserNameDomain);
 myContainer.bind<PostUserNameResponder>(TYPES.PostUserNameResponder).to(PostUserNameResponder);
+
+myContainer.bind<UserService>(TYPES.UserService).to(UserService);
 
 export { myContainer };
