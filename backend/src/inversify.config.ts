@@ -6,9 +6,16 @@ import { GetHelloWorldResponder } from './application/api/GetHelloWorld/responde
 import { PostUserNameAction } from './application/api/PostUserName/action';
 import { PostUserNameDomain } from './application/api/PostUserName/domain';
 import { PostUserNameResponder } from './application/api/PostUserName/responder';
+import { UserRepositoryInterface } from './domain/repositories/UserRepositoryInterface';
+import { RedisConnection } from './infrastructure/DataSource/RedisConnection';
+import { UserRedisRepository } from './infrastructure/repositories/UserRedisRepository';
 import { TYPES } from './types/DependencyTypes';
 
 const myContainer = new Container();
+myContainer.bind<RedisConnection>(TYPES.RedisConnection).toConstantValue(new RedisConnection());
+
+myContainer.bind<UserRepositoryInterface>(TYPES.UserRepository).to(UserRedisRepository);
+
 myContainer.bind<GetHelloWorldDomain>(TYPES.GetHelloWorldDomain).to(GetHelloWorldDomain);
 myContainer.bind<GetHelloWorldResponder>(TYPES.GetHelloWorldResponder).to(GetHelloWorldResponder);
 myContainer.bind<GetHelloWorldAction>(TYPES.GetHelloWorldAction).to(GetHelloWorldAction);
